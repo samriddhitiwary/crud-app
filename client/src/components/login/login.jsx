@@ -37,14 +37,7 @@ const Login = () => {
       <h1>USER LOGIN PORTAL</h1>
       <form className='addUserForm' onSubmit={submitForm}>
 
-      <div className="inputGroup">
-          <label htmlFor="fname">First name</label>
-          <input type="text" onChange={inputHandler} id="fname" name="fname" autoComplete='off' placeholder='First name' />
-        </div>
-        <div className="inputGroup">
-          <label htmlFor="lname">Last name</label>
-          <input type="text" onChange={inputHandler} id="lname" name="lname" autoComplete='off' placeholder='Last name' />
-        </div>
+     
         <div className="inputGroup">
           <label htmlFor="email">Email</label>
           <input type="email" onChange={inputHandler} id="email" name="email" autoComplete='off' placeholder='Email' />
@@ -54,14 +47,7 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input type="password" onChange={inputHandler} id="password" name="password" autoComplete='off' placeholder='Password' />
         </div>
-        <div className="inputGroup">
-          <label htmlFor="role">Role</label>
-          <select name="role" onChange={inputHandler} id="role">
-            <option value="Patients">Patients</option>
-            <option value="Doctors">Doctors</option>
-            <option value="Admin">Admin</option>
-          </select>
-        </div>
+       
       
         <div className="inputGroup">
           <button type="submit">Login</button>
