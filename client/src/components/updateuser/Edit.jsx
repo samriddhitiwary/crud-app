@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import "../adduser/add.css";
@@ -6,15 +6,17 @@ import toast from 'react-hot-toast';
 
 const Edit = () => {
 
-    const users = {
+    const initialUser = {
         fname: "",
         lname: "",
-        email: ""
+        email: "",
+        password: "",
+        role: "Patients" 
     }
 
     const { id } = useParams();
     const navigate = useNavigate();
-    const [user, setUser] = useState(users);
+    const [user, setUser] = useState(initialUser);
 
     const inputChangeHandler = (e) => {
         const { name, value } = e.target;
@@ -30,8 +32,7 @@ const Edit = () => {
             .catch((error) => {
                 console.log(error);
             })
-    }, [id])
-
+    }, [id]);
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -63,27 +64,23 @@ const Edit = () => {
 
                 <div className="inputGroup">
                     <label htmlFor="password">Password</label>
-                    <input type="password" onChange={inputChangeHandler} id="password" name="password" autoComplete='off' placeholder='Password' />
+                    <input type="password" value={user.password} onChange={inputChangeHandler} id="password" name="password" autoComplete='off' placeholder='Password' />
                 </div>
                 <div className="inputGroup">
                     <label htmlFor="role">Role</label>
-                    <select name="role" onChange={inputChangeHandler} id="role">
+                    <select name="role" value={user.role} onChange={inputChangeHandler} id="role">
                         <option value="Patients">Patients</option>
                         <option value="Doctors">Doctors</option>
                         <option value="Admin">Admin</option>
                     </select>
                 </div>
 
-
-
-
                 <div className="inputGroup">
                     <button type="submit">UPDATE USER</button>
                 </div>
-
             </form>
         </div>
     )
 }
 
-export default Edit
+export default Edit;
