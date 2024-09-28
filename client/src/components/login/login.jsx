@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
-import "./add.css";
+// import "./add.css";
 import toast from 'react-hot-toast';
 
-const login = () => {
+const Login = () => {
 
   const users = {
    
@@ -22,13 +22,13 @@ const login = () => {
   }
 
   const submitForm = async (e) => {
-    e.preventDefault();
-    await axios.post("http://localhost:8000/api/getone/:id", user)
-      .then((response) => {
-        toast.success(response.data.msg, { position: "top-right" })
-        navigate("/")
-      })
-      .catch(error => console.log(error))
+    // e.preventDefault();
+    // await axios.post("http://localhost:8000/api/getone/:id", user)
+    //   .then((response) => {
+    //     toast.success(response.data.msg, { position: "top-right" })
+    //     navigate("/")
+    //   })
+    //   .catch(error => console.log(error))
   }
 
   return (
@@ -47,11 +47,11 @@ const login = () => {
         </div>
       
         <div className="inputGroup">
-          <button type="submit">lOGIN</button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>
   )
 }
 
-export default login;
+export default Login;
