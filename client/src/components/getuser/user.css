@@ -53,3 +53,21 @@
     margin: 0 10px;
     text-decoration: none;
 }
+.User_header{
+    margin-left: 35%;
+    margin-right: 10%;
+    margin-top: 5%;
+    justify-content: center;
+}
+.Button{
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+    margin-right: 5%;
+
+}

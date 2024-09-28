@@ -32,10 +32,11 @@ const User = () => {
 
   return (
     <>
-    <div className=''>
-        <Link to={"/add"} className='addButton' > Sign-Up</Link>
-        <Link to={"/login"} className='addButton' >Login</Link>
-        {/* <Link to={"/add"} className='addButton' >Login</Link> */}
+     <div className='User_header'  >
+        <Link to={"/add"} className='Button' > Sign-Up</Link>
+        <Link to={"/login"} className='Button' >Login</Link>
+        <Link to={"/add"} className='Button' >Admin</Link>
+        <Link to={"/add"} className='Button' >Appointment</Link>
     </div>
     <div className='userTable'>
         <Link to={"/add"} className='addButton'>List of User</Link>

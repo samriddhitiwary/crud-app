@@ -1,34 +1,36 @@
 import './App.css';
-import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import User from './components/getuser/User';
 import Add from './components/adduser/Add';
 import Edit from './components/updateuser/Edit';
 import Login from './components/login/login';
+import Header from './components/Header/Header';
 
 function App() {
 
-  const route = createBrowserRouter([
+  const router = createBrowserRouter([
     {
-      path:"/",
-      element: <User/>,
+      path: "/",
+      element: <User />,
     },
     {
-      path:"/add",
-      element: <Add/>,
+      path: "/add",
+      element: <Add />,
     },
     {
-      path:"/login",
-      element: <Login />
+      path: "/login",
+      element: <Login />,
     },
     {
-      path:"/edit/:id",
-      element: <Edit/>,
+      path: "/edit/:id",
+      element: <Edit />,
     },
-  ])
+  ]);
 
   return (
     <div className="App">
-       <RouterProvider router={route}></RouterProvider>
+      {/* <Header /> */}
+      <RouterProvider router={router} />
     </div>
   );
 }
