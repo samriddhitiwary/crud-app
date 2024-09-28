@@ -16,10 +16,10 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ["Patients", "Doctors"], 
+        enum: ["Patients", "Doctors", "Admin"], 
         default: "Patients",
         required: true
-    },
+    },  
     password:{
         type: String,
         required: true

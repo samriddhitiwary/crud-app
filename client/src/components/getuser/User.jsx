@@ -34,11 +34,11 @@ const User = () => {
     <>
     <div className=''>
         <Link to={"/add"} className='addButton' > Sign-Up</Link>
-        <Link to={"/add"} className='addButton' >Login</Link>
+        <Link to={"/login"} className='addButton' >Login</Link>
         {/* <Link to={"/add"} className='addButton' >Login</Link> */}
     </div>
     <div className='userTable'>
-        <Link to={"/add"} className='addButton'>Add User</Link>
+        <Link to={"/add"} className='addButton'>List of User</Link>
         <table border={1} cellPadding={10} cellSpacing={0}>
             <thead>
                 <tr>

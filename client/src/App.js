@@ -16,6 +16,10 @@ function App() {
       element: <Add/>,
     },
     {
+      path:"/login",
+      element: <login />
+    },
+    {
       path:"/edit/:id",
       element: <Edit/>,
     },
