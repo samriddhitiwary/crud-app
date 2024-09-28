@@ -31,6 +31,12 @@ const User = () => {
   }
 
   return (
+    <>
+    <div className=''>
+        <Link to={"/add"} className='addButton' > Sign-Up</Link>
+        <Link to={"/add"} className='addButton' >Login</Link>
+        {/* <Link to={"/add"} className='addButton' >Login</Link> */}
+    </div>
     <div className='userTable'>
         <Link to={"/add"} className='addButton'>Add User</Link>
         <table border={1} cellPadding={10} cellSpacing={0}>
@@ -39,6 +45,7 @@ const User = () => {
                     <th>S.No.</th>
                     <th>User name</th>
                     <th>User Email</th>
+                    <th>Role</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -50,6 +57,7 @@ const User = () => {
                             <td>{index + 1}</td>
                             <td>{user.fname} {user.lname}</td>
                             <td>{user.email}</td>
+                            <td>{user.role}</td>
                             <td className='actionButtons'>
                                 <button onClick={()=> deleteUser(user._id)}><i className="fa-solid fa-trash"></i></button>
                                 <Link to={`/edit/`+user._id}><i className="fa-solid fa-pen-to-square"></i></Link>
@@ -62,6 +70,7 @@ const User = () => {
             </tbody>
         </table>
     </div>
+    </>
   )
 }
 
