@@ -23,13 +23,22 @@ const Login = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8000/api/update:id", user)
+    await axios.post("http://localhost:8000/api/login", user)
       .then((response) => {
-        toast.success(response.data.msg, { position: "top-right" })
-        navigate("/")
+        toast.success(response.data.msg, { position: "top-right" });
+        navigate("/appointment");
       })
-      .catch(error => console.log(error))
+      .catch((error) => {
+        if (error.response && error.response.data) {
+          toast.error(error.response.data.msg, { position: "top-right" });
+        } else {
+          toast.error("Something went wrong", { position: "top-right" });
+        }
+        console.log(error);
+        navigate("/login");
+      });
   }
+  
 
   return (
     <div className='addUser'>
