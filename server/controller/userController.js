@@ -49,6 +49,24 @@ export const getOne = async(req, res) =>{
     }
 }
 
+export const login = async(req, res) => {
+    try {       
+        const userData = await User.findOne({ 'email': req.body.email });
+             
+        if (!userData) {
+            return res.status(401).json({ msg: "Authentication failed" });
+        }
+             
+        if (req.body.password === userData.password) {
+            return res.status(200).json({ msg: "Login successful" });
+        } else {
+            return res.status(401).json({ msg: "Authentication failed" });
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+}
+
 
 export const update = async(req, res) =>{
     try {
