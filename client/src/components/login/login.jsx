@@ -17,7 +17,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const inputHandler = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; 
     setUser({ ...user, [name]: value });
   }
 
@@ -34,7 +34,7 @@ const Login = () => {
         } else {
           toast.error("Something went wrong", { position: "top-right" });
         }
-        console.log(error);
+        
         navigate("/login");
       });
   }
